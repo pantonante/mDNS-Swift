@@ -36,12 +36,13 @@ class TableVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("beacubeServiceCell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel?.text = beacubeBrowser.beacubeList[indexPath.row].getAddress()
+        let beacubeService = beacubeBrowser.beacubeList[indexPath.row]
+        cell.textLabel?.text = beacubeService.getName()
+        cell.detailTextLabel?.text = beacubeService.getAddress() + ":" + String(beacubeService.getPort())
         return cell
     }
     
     func reloadServicesTable() {
-        print("Should reload")
         self.beacubeServicesTable.reloadData()
     }
     

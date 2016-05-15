@@ -20,6 +20,14 @@ class BeacubeService:Equatable{
     func getAddress() -> String {
         return ipAddress
     }
+    
+    func getPort() -> Int{
+        return netService.port
+    }
+    
+    func getName() -> String{
+        return netService.name
+    }
 
 }
 
