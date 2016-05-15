@@ -13,8 +13,6 @@ class TableVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var beacubeBrowser = mDNSBrowser()
     @IBOutlet weak var beacubeServicesTable: UITableView!
     
-    let data:[String] = ["A","B","C","D","E","F"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         beacubeBrowser.searchForServices()
@@ -24,7 +22,6 @@ class TableVC: UIViewController, UITableViewDataSource, UITableViewDelegate{
         
          NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TableVC.reloadServicesTable), name: "newBeacubeServiceDiscovered", object: beacubeBrowser)
     }
-    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1

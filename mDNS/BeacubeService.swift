@@ -9,8 +9,8 @@
 import Foundation
 
 class BeacubeService:Equatable{
-    var netService:NSNetService
-    var ipAddress:String
+    private var netService:NSNetService
+    private var ipAddress:String
     
     init(netService:NSNetService, ipAddress:String) {
         self.netService = netService
